@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from './screen/Navbar';
+import AddSera from './screen/AddSera';
+import Hitady from './screen/HitadySera';
+import DisplaySera from './screen/DisplaySera';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path='/addSera' Component={AddSera}></Route>
+        <Route path='/hitady' Component={Hitady}></Route>
+        <Route path='/' exact Component={DisplaySera}></Route>
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;
