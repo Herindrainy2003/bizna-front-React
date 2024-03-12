@@ -1,11 +1,5 @@
 
 const initialState = {
-    // nameSera : "",
-    // priceSera : "",
-    // descriptionSera : "",
-    // contact : "",
-    // nameFacebook : "",
-    // image : ""
     sera : []
 }
 

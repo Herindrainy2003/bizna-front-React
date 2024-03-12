@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-function Navbar() {
+function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
 
     const toggleMenu = () => {
         setMenuOpen(!menuOpen);
-    };
+    }
+
+    const closeMenu = () => {
+        setMenuOpen(false);
+    }
 
     return (
         <div className='header'>
@@ -19,10 +23,10 @@ function Navbar() {
                 </button>
                 <div className={`menu ${menuOpen ? 'open' : ''}`}>
                     <ul className="link-list">
-                        <li><Link  to="/" style={{textDecoration: 'none'}}>Ireo Sera</Link></li>
-                        <li><Link  to="/addSera"style={{textDecoration: 'none'}}>Hisera</Link> </li>
-                        <li><Link  to="/hitady"style={{textDecoration: 'none'}}>Hitady</Link></li>
-                        <li><Link  to="/pitady"style={{textDecoration: 'none'}}>Misy Pitady</Link></li>
+                        <li onClick={closeMenu}><Link to="/" style={{textDecoration: 'none'}}>Ireo Sera</Link></li>
+                        <li onClick={closeMenu}><Link to="/addSera" style={{textDecoration: 'none'}}>Hisera</Link> </li>
+                        <li onClick={closeMenu}><Link to="/hitady" style={{textDecoration: 'none'}}>Hitady</Link></li>
+                        <li onClick={closeMenu}><Link to="/misymitady" style={{textDecoration: 'none'}}>Misy Pitady</Link></li>
                     </ul>
                 </div>
             </div>
@@ -30,4 +34,4 @@ function Navbar() {
     );
 }
 
-export default Navbar;
+export default Header;

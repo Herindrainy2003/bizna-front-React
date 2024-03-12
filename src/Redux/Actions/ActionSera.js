@@ -1,4 +1,4 @@
-export const ActionSera = (nameSera , priceSera ,descriptionSera ,contact ,nameFacebook ,image )=>({
+export const ActionSera = (name , price ,description ,contact , category ,nameFacebook ,image )=>({
     type :'ADD_SERA' ,
-    payload :{nameSera , priceSera ,descriptionSera ,contact ,nameFacebook ,image}
+    payload :{name , price ,description ,contact ,category,nameFacebook ,image}
 })
