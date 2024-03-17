@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card, CardMedia, CardContent, CardActions, Typography, Button } from '@mui/material';
 import data from '../data/sera.js'
+
 function DisplaySeraTadiavina() {
   return (
     <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', marginTop: '20px' }}>
