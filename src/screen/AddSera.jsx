@@ -69,7 +69,8 @@ const handleSubmit = (e)=>{
                 <div className="form-group">
                     <label htmlFor="category">Sokajy</label>
                     <select id="category"   onChange={(e)=>setCategory(e.target.value)} required>
-                        <option value="Technologie">Technologie</option>
+                        <option value="">Categories</option>
+                        <option value="technologie">Technologie</option>
                         <option value="vetement">Vetement </option>
                         <option value="Autres">Autres</option>
                     </select>

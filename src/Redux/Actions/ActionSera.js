@@ -1,11 +1,12 @@
 import  axios  from "axios"
+import { Base64 } from 'js-base64';
 
 export const createSera = (nameSera , price ,description ,contact , category ,nameFacebook ,image )=>(async(dispatch)=>{
     try{
         dispatch({ type : 'ADD_SERA' })
         
         const {data} = await axios.post('/api/sera/addsera' , {nameSera , price ,description ,contact , category ,nameFacebook ,image} , {headers: {'Content-Type': 'multipart/form-data'}})
-        console.log(data)
+       
         dispatch({type : 'ADD_SERA_SUCCES' , payload : data})
    
     }catch(error){
@@ -25,11 +26,11 @@ export const createSera = (nameSera , price ,description ,contact , category ,na
 //afficher tous le sera
 export const  allSera = () => async(dispatch)=>{
     try{
+
         dispatch({Loading : true ,type : 'ALL_SERA'})
 
         const {data} = await axios.get('/api/sera')
-       
-        dispatch({type : "ALL_SERA_SUCCES" , payload : data})
+          dispatch({type : "ALL_SERA_SUCCES" , payload : data})
     }catch(error){
         const message =
         error.response && error.response.data.message
