@@ -1,8 +1,9 @@
 //cette code contient les formulaires d'ajouter sera
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import {useDispatch}  from 'react-redux'
-import { ActionTadySera } from './../Redux/Actions/ActionTadySera';
+import { TadySera } from './../Redux/Actions/ActionTadySera';
+import { useSelector } from 'react-redux';
 function HitadySera() {
 
     const [name , setName] = useState('')
@@ -16,20 +17,21 @@ function HitadySera() {
 
     const handleSubmit = (e)=>{
         e.preventDefault()
-        dispatch(ActionTadySera(name ,price ,description , contact ,category ,nameFacebook ,image))
-        setName('') 
-        setPrice ('')
-        setDescription('')
-        setContact ('')
-        setNameFacebook  ('')
-        setImage('')
+        dispatch(TadySera(name ,price ,description , contact ,category ,nameFacebook ,image))
+        setName("");
+        setDescription("");
+        setCategory("");
+        setNameFacebook("")
+        setContact("")
+        setPrice(0);
+        setImage()
     }
 
   return (
     <div>
         <div className="container">
         
-            <form className="form" onSubmit={handleSubmit}>
+            <form className="form" onSubmit={handleSubmit} encType="multipart/htmlForm-data">
             
                 <h2>Hitady Sera</h2>
                 
@@ -61,15 +63,15 @@ function HitadySera() {
                 <div className="form-group">
                     <label htmlFor="categories">Sokajy</label>
                     <select id="categories" name="categories"  onChange={(e)=>setCategory(e.target.value)} required>
-                        <option value="Technologie">Technologie</option>
+                        <option value="technologie">Technologie</option>
                         <option value="vetement">Vetement </option>
                         <option value="Autres">Autres</option>
                     </select>
                 </div>
             
                 <div className="form-group">
-                    <label htmlFor="photo">Sarin'ilay Sera Tadiavina</label>
-                    <input type="file" id="photo" name="photo" accept="image/*" value={image} onChange={(e)=>setImage(e.target.value)} required />
+                    <label htmlFor="image">Sarin'ilay Sera</label>
+                    <input filename={image}  onChange={e => setImage(e.target.files[0])}  type="file" accept="image/*"></input>
                 </div>
             
                 <button type="submit">Hitady</button>

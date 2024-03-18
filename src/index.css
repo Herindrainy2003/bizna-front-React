@@ -41,7 +41,7 @@
 .hamburger svg {
   fill: rgba(0, 0, 0, 0.63);
   width: 24px;
-  height: 24px;
+  height: 64px;
 }
 
 @media (max-width: 768px) {
@@ -61,7 +61,7 @@
   }
 
   .menu.open {
-      max-height: 200px; /* Hauteur maximale de votre choix */
+      max-height: 300px; /* Hauteur maximale de votre choix */
   }
 
   .hamburger {

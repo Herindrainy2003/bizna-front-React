@@ -22,7 +22,6 @@ function AddSera() {
 
   useEffect(() => {
     if (sera) {
-      dispatch({ type: "ADD_SERA_FAIL" });
       setName("");
       setDescription("");
       setCategory("");
@@ -55,7 +54,7 @@ const handleSubmit = (e)=>{
                     <input type="text" id="contact" name="contact" value={contact} onChange={(e)=>setContact(e.target.value)} required />
                 </div>
                 <div className="form-group">
-                    <label htmlFor="nameFacebook">Anaranao ao amin'ny Facebook (Afaka tsy asiana)</label>
+                    <label htmlFor="nameFacebook">Anaranao ao amin'ny Facebook</label>
                     <input type="text" id="nameFacebook" name="nameFacebook"  value={nameFacebook} onChange={(e)=>setNameFacebook(e.target.value)} required />
                 </div>
                 <div className="form-group">

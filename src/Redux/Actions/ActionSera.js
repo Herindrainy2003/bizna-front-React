@@ -1,6 +1,4 @@
 import  axios  from "axios"
-import { Base64 } from 'js-base64';
-
 export const createSera = (nameSera , price ,description ,contact , category ,nameFacebook ,image )=>(async(dispatch)=>{
     try{
         dispatch({ type : 'ADD_SERA' })
